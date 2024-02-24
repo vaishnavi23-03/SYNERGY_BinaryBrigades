@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shortest Route Map</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         #map-container { height: 500px; }
@@ -44,10 +46,23 @@
             .then(response => response.json())
             .then(data => {
                 var coordinates = data.coordinates.map(coord => [coord[1], coord[0]]);
-        var polyline = L.polyline(coordinates, {color: 'red'}).addTo(map);
-        map.fitBounds(polyline.getBounds());
-    })
-    .catch(error => console.error('Error fetching map:', error));
+                var polyline = L.polyline(coordinates, {color: 'black'}).addTo(map);//shortest route
+                map.fitBounds(polyline.getBounds());
+
+                var evIcon = L.divIcon({
+    className: 'custom-div-icon',
+    html: '<i class="fas fa-bolt fa-2x"></i>', 
+    iconSize: [22, 22], 
+    iconAnchor: [11, 11], 
+    popupAnchor: [0, -11]
+});
+
+                //markers for EV
+                data.ev_coordinates.forEach(evCoord => {
+                    L.marker(evCoord, {icon: evIcon}).addTo(map);
+                });
+            })
+            .catch(error => console.error('Error fetching map:', error));
         }
     </script>
 </body>

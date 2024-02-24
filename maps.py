@@ -1,5 +1,3 @@
-
-
 from flask import Flask, render_template, jsonify, request
 import openrouteservice as ors
 
@@ -18,21 +16,31 @@ def fetch_map():
     start = (data['startLon'], data['startLat'])
     end = (data['endLon'], data['endLat'])
 
-    # Get directions
+    # Directions (shortest route)
     directions = CLIENT.directions(
         coordinates=[start, end],
         profile='driving-car',
         format='geojson'
     )
 
-    # Extract coordinates from the route
+    # Route coordinates
     coordinates = []
     for feature in directions['features']:
         for coord in feature['geometry']['coordinates']:
             coordinates.append(coord)
 
-    return jsonify({'coordinates': coordinates})
+    # EVs on the way (1km radius)
+    pois = CLIENT.places(
+        request='pois',
+        geojson={'type': 'LineString', 'coordinates': coordinates},
+        buffer=1000,
+        filter_category_ids=[596]
+    )
+
+   
+    ev_coordinates = [list(reversed(poi['geometry']['coordinates'])) for poi in pois['features']]
+
+    return jsonify({'coordinates': coordinates, 'ev_coordinates': ev_coordinates})
 
 if __name__ == '__main__':
     app.run(debug=True)
-
