@@ -1,18 +1,12 @@
-
-import Footer from "@/smallcomponents/Footer";
-import "../App.css";
-import Sidebar from "@/smallcomponents/Sidebar";
-//import MapCanvas from "./MapCanvas";
+import Sidebar from "./Sidebar";
+import Footer from "./Footer";
 import { SiYourtraveldottv } from "react-icons/si";
-import MapCanvas from "./MapCanvas";
-import { useState } from "react";
-import { BentoGridDemo } from "./bento";
- 
-function LandingPage() {
-  
-  return (
-    <>
-      <div className="flex flex-column hvh ml-64">
+import { BentoGridDemo } from "@/components/bento";
+
+function MainDash(){
+    return(
+        <>
+        <div className="flex flex-column hvh ml-64">
         <div className="flex flex-column">
           <Sidebar />
         </div>
@@ -70,16 +64,15 @@ function LandingPage() {
             </div>
           </div>
           <div className="hmax wmax bg-gradient-to-r from-blue-500 to-purple-500 rounded-md border-2 m-2 mt-3">
-            <MapCanvas/>
+            <BentoGridDemo/>
           </div>
           <div className="wmax h-64 mt-16">
           <Footer/>
           </div>
         </div>
       </div>
-    </>
-  );
+        </>
+    )
 }
- 
-export default LandingPage;
- 
+
+export default MainDash
