@@ -10,7 +10,7 @@ export function BentoGridDemo() {
 
   return (
     <div className="">
-        <BentoGrid className="max-w  m-0 border-2 p-10 border-black rounded-md">
+        <BentoGrid className="max-w  m-0  p-10 border-black rounded-md">
 
 {items.map((item, i) => (
   
@@ -19,7 +19,7 @@ export function BentoGridDemo() {
     title={item.title}
     description={item.description}
     header={item.header}
-      className={i==3?'md:col-span-3 md:row-span-2 border-2 border-stone-600 rounded-md':'border-2 border-stone-600 rounded-md'}
+      className={i==3?'md:col-span-3 md:row-span-2 border-stone-600 rounded-md':' border-stone-600 rounded-md'}
       
   />
 ))}

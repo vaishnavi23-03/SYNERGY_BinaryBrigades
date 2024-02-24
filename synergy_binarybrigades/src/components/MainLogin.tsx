@@ -7,6 +7,8 @@ import LandingPage from './LandingPage';
 import { BentoGridDemo } from './bento';
 import { useState } from 'react';
 import MainDash from '@/smallcomponents/MainDash'
+import MainStations from '@/smallcomponents/MainStations';
+import MainMap from '@/smallcomponents/MainMap';
 
 function MainLogin(){
     const [dash, setDash] = useState(false)
@@ -21,8 +23,10 @@ function MainLogin(){
                 <Route path='/' element={<LoginSelector/>}/>
                 <Route path='/loginpage' element={<LoginPage/>}/>
                 <Route path='/signuppage' element={<SignupPage/>}/>
-                <Route path='/landingpage' element={<LandingPage changeDash={changeDash}/>}/>
+                <Route path='/landingpage' element={<LandingPage/>}/>
                 <Route path='/dashboard' element={<MainDash/>}/>
+                <Route path='/stations' element={<MainStations/>}/>
+                <Route path='/maps' element={<MainMap/>}/>
             </Routes>
         </Router>
             

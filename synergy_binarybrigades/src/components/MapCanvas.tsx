@@ -7,9 +7,9 @@ function MapCanvas(){
 
 
    
-    const [startAddress,setStartAddress]=useState('');
+    // const [startAddress,setStartAddress]=useState('');
   
-    const [endAddress,setendAddress]=useState('');
+    // const [endAddress,setendAddress]=useState('');
     
 
         function fetchAndDisplayMap() {
@@ -55,7 +55,7 @@ function MapCanvas(){
             <>
             <div className='wmax hmax bg-gray-200'>
            
-            <div  id='map-container' className='hmax wmax bg-blue-200'></div>
+            <div  id='map-container' className='hmax wmax bg-b200'></div>
 
         <div id="coordinates-form">
             <label >Start Address</label>

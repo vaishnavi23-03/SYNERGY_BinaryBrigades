@@ -1,9 +1,9 @@
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import { SiYourtraveldottv } from "react-icons/si";
-import { BentoGridDemo } from "@/components/bento";
+import { ThreeDCardDemo } from "@/components/Card";
 
-function MainDash(){
+function MainStations(){
     return(
         <>
         <div className="flex flex-column hvh ml-64">
@@ -63,8 +63,8 @@ function MainDash(){
               </div>
             </div>
           </div>
-          <div className="hmax wmax  rounded-md  mt-3">
-            <BentoGridDemo/>
+          <div className="hmax wmax rounded-md m-2 mt-3">
+            <ThreeDCardDemo/>
           </div>
           <div className="wmax h-64 mt-16">
           <Footer/>
@@ -75,4 +75,4 @@ function MainDash(){
     )
 }
 
-export default MainDash
+export default MainStations
