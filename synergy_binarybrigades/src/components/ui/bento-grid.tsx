@@ -1,4 +1,4 @@
-import { cn } from "/Users/ASHISH SATAVASE/OneDrive/Desktop/synergy/SYNERGY_BinaryBrigades/synergy_binarybrigades/src/lib/utils";
+import { cn } from "/SyneryHackathon/SYNERGY_BinaryBrigades/synergy_binarybrigades/src/lib/utils";
 
 export const BentoGrid = ({
   className,

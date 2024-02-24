@@ -1,5 +1,7 @@
 import '../App.css'
 import LoginSelector from '@/smallcomponents/LoginSelector'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import LandingPage from './LandingPage';
 
 function SignupPage(){
     return(
@@ -51,12 +53,14 @@ function SignupPage(){
             </p>
           </div>
           <div className="flex items-center justify-between">
+            <Link to={'/landingpage'}>
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
             >
               Sign In
             </button>
+            </Link>
             <a
               className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
               href="#"
