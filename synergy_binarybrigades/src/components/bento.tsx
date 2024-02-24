@@ -4,6 +4,7 @@ import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
 
 import Page from "./Page";
 import Energy from "./Energy";
+import Graphs from "./Graphs";
 
 export function BentoGridDemo() {
 
@@ -18,7 +19,7 @@ export function BentoGridDemo() {
     title={item.title}
     description={item.description}
     header={item.header}
-      className={i==3?'md:col-span-2 md:row-span-1 border-2 border-stone-600 rounded-md':'border-2 border-stone-600 rounded-md'}
+      className={i==3?'md:col-span-3 md:row-span-2 border-2 border-stone-600 rounded-md':'border-2 border-stone-600 rounded-md'}
       
   />
 ))}
@@ -27,12 +28,9 @@ export function BentoGridDemo() {
     
   );
 }
-const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
-);
 const items = [
   {
-    title: <p className="">Top stop</p>,
+    title: <p className="">Economy of your travel</p>,
     description: "",
     header: <Page/>,
     
@@ -48,15 +46,9 @@ const items = [
     header: <Energy/>
   },
   {
-    title: "The Power of Communication",
+    title: "see your visual analytics",
     description:
-      "Understand the impact of effective communication in our lives.",
-    header: <Skeleton />
-  },
-  {
-    title: "The Pursuit of Knowledge",
-    description: "Join the quest for understanding and enlightenment.",
-    header: <Skeleton />
-    
+      "monthly statistics of distance travelled & energy spent",
+    header: <Graphs />
   }
 ];

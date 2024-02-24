@@ -4,6 +4,7 @@ import LoginPage from './LoginPage'
 import SignupPage from './SignupPage'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import LandingPage from './LandingPage';
+import { BentoGridDemo } from './bento';
 
 
 function MainLogin(){
@@ -15,6 +16,7 @@ function MainLogin(){
                 <Route path='/loginpage' element={<LoginPage/>}/>
                 <Route path='/signuppage' element={<SignupPage/>}/>
                 <Route path='/landingpage' element={<LandingPage/>}/>
+                <Route path='/landingpage/dashboard' element={<BentoGridDemo/>}/>
             </Routes>
         </Router>
             

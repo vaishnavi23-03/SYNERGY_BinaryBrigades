@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route ,Link} from "react-router-dom";
 function LoginSelector() {
   return (
     <>
-          <div className="flex justify-center items-center wmax h-20 shadow-md mb-7 rounded-md">
+          <div className="flex justify-center items-center wmax h-20 shadow-md mb-7 rounded-md ">
             <div className="flex basis-1/4 align-center">
               <img src="" width={30} height={30}></img>
             </div>
