@@ -1,6 +1,7 @@
 import "../App.css";
 import Sidebar from "@/smallcomponents/Sidebar";
 import MapCanvas from "./MapCanvas";
+import { BentoGridDemo } from "./bento";
 
 function LandingPage() {
   return (
@@ -41,11 +42,10 @@ function LandingPage() {
           </div>
         </div>
         <div className="hmax wmax bg-gray-200 rounded-md border-2 m-2 mt-3">
-          <MapCanvas/>
+            <BentoGridDemo/>
         </div>
         </div>
       </div>
-      <div></div>
     </>
   );
 }

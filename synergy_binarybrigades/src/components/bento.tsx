@@ -1,7 +1,9 @@
 import DistanceTravelled from "./DIstanceTravelled";
 import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
 
+
 import Page from "./Page";
+import Energy from "./Energy";
 
 export function BentoGridDemo() {
 
@@ -16,7 +18,7 @@ export function BentoGridDemo() {
     title={item.title}
     description={item.description}
     header={item.header}
-      className={i==3?'md:col-span-2 md:row-span-2 border-2 border-stone-600 rounded-md':'border-2 border-stone-600 rounded-md'}
+      className={i==3?'md:col-span-2 md:row-span-1 border-2 border-stone-600 rounded-md':'border-2 border-stone-600 rounded-md'}
       
   />
 ))}
@@ -30,7 +32,7 @@ const Skeleton = () => (
 );
 const items = [
   {
-    title: <p className="">User name</p>,
+    title: <p className="">Top stop</p>,
     description: "",
     header: <Page/>,
     
@@ -41,9 +43,9 @@ const items = [
     header: <DistanceTravelled/>
   },
   {
-    title: "The Art of Design",
+    title: "Energy Consumed",
     description: "",
-    header: <div/>
+    header: <Energy/>
   },
   {
     title: "The Power of Communication",
