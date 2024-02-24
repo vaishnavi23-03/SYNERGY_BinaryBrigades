@@ -1,0 +1,10 @@
+.card-item {
+    -webkit-box-shadow: -21px 25px 83px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -21px 25px 83px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: -21px 25px 83px -25px rgba(0, 0, 0, 0.75);
+  }
+  
+  *{
+    /* font-size: smaller; */
+    text-align: center;
+  }
