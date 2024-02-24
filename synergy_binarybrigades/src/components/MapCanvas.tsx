@@ -7,10 +7,9 @@ function MapCanvas(){
 
 
    
-    const [startAdd,setstartAdd]=useState('');
-    const [startLon,setStartlong]=useState('');
-    const [endLat,setEndLat]=useState('');
-    const [endAdd,setendAddg]=useState('');
+    const [startAddress,setStartAddress]=useState('');
+  
+    const [endAddress,setendAddress]=useState('');
     
 
         function fetchAndDisplayMap() {
@@ -20,7 +19,7 @@ function MapCanvas(){
             fetch('http://127.0.0.1:5000/fetch_map', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ startAdd: startAdd, endAdd: endAdd})
+                body: JSON.stringify({ startAddress: startAddress, endAddress: endAddress })
             })
             .then(response => response.json())
             .then(data => {
@@ -60,10 +59,10 @@ function MapCanvas(){
 
         <div id="coordinates-form">
             <label >Start Address</label>
-            <input type="text" id="start-lat" name="start-lat" required onChange={(e)=>{setstartAdd(e.target.value)}}></input><br></br>
+            <input type="text" id="startAddress" name="startAddress" required onChange={(e)=>{setStartAddress(e.target.value)}}></input><br></br>
            
             <label> End Address:</label>
-            <input type="text" id="end-lon" name="end-lon" required onChange={(e)=>{setendAddg(e.target.value)}}></input>
+            <input type="text" id="endAddress" name="endAddress" required onChange={(e)=>{setendAddress(e.target.value)}}></input>
             <button type="submit" onClick={fetchAndDisplayMap}>Plot Route</button>
         </div>
             </div>
