@@ -5,7 +5,7 @@ import "@/components/SignIn2.css"
 
 export default function  SignUp2() {
     const backgroundStyle = {
-        backgroundImage: "url(${signInImage})",
+        backgroundImage: `url(${signInImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

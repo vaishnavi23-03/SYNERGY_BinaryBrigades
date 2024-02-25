@@ -20,10 +20,10 @@ export function TypewriterEffectSmoothDemo() {
   return (
     <div>
     <div className="flex flex-col items-center justify-center h-[40rem] space-y-4 bg-indigo-800 text-white">
-    <p className="twc text-4xl text-center">
-      Discover the Future of <br/> Travel with <br/>
+    <p className="twc text-5xl text-center">
+      GreenRoutes
     </p>
-    <TypewriterEffectSmooth className="twcontainer text-8xl" words={words} />
+    <TypewriterEffectSmooth className="twcontainer text-4xl" words={words} />
     <p className="pb-4 text-sm italic text-center">
       Your Gateway to the Nearest Electric Vehicle Charging Stations.
     </p>

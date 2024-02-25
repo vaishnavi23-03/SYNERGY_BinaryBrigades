@@ -235,11 +235,8 @@ const[ans,setAns]=useState(250);
               </div>
             </div>
             <div className="flex-column ml-3">
-              <div>Estimated Range: {number1}km</div>
+              <div className="text-xl font-medium">Estimated Range: {number1}km</div>
               <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Default range
-                </label>
                 <input
                   id="default-range"
                   type="range"
@@ -248,9 +245,11 @@ const[ans,setAns]=useState(250);
                 ></input>
               </div>
               <div>
-                <div className="flex flex-row">
-                  <p>Selected the drive mode for today's journey</p>
-                  <div className="text-white bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md p-2 m-2">
+                <div className="flex flex-column justify-center items-center">
+                  <div className="flex justify-center items-start">
+                    <p className="text-xl font-medium ">Select the drive mode for today's journey</p>
+                  </div>
+                  <div className=" flex text-white bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md p-2 m-2">
                     <button onClick={(e)=>{setNumber1(ans*1.25); setbatteryPercentage(number1);}}>Economy</button>
                   </div>
                   <div className="text-white bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md p-2 m-2">
@@ -261,8 +260,8 @@ const[ans,setAns]=useState(250);
                   </div>
                 </div>
               </div>
-              <div>
-                <p>Selection Regeneration Mode</p>
+              <div className="flex justify-center items-center">
+                <p className="font-medium text-xl">Selection Regeneration Mode</p>
                 <div className="flex">
                   <div className="text-white bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md p-2 m-2">
                    <button onClick={(e)=>{setNumber1(number1+20); setbatteryPercentage(number1);}}> Regeneration 1</button>
@@ -275,7 +274,8 @@ const[ans,setAns]=useState(250);
                   </div>
                 </div>
               </div>
-              <div>Battery % left:{(number1/ans)*100}</div>
+              <div className="text-xl font-medium">Battery % left:{(number1/ans)*100}</div>
+              <div className="text-xl font-medium">You have x charging stations on the way</div>
             </div>
           </div>
           <div className="hmax wmax bg-gradient-to-r from-blue-500 to-purple-500 rounded-md border-2 m-2 mt-4">
