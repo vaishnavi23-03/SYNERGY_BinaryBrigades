@@ -1,15 +1,12 @@
 import Footer from "@/smallcomponents/Footer";
 import "../App.css";
 import Sidebar from "@/smallcomponents/Sidebar";
-//import MapCanvas from "./MapCanvas";
 import { SiYourtraveldottv } from "react-icons/si";
-
+import carimage from "@/assets/car.png"
+import demomap from "@/assets/map1.png"
 import "leaflet/dist/leaflet.css"; // Import Leaflet CSS
 import L from "leaflet"; // Import Leaflet library
-import MapCanvas from "./MapCanvas";
 import { useState } from "react";
-import { BentoGridDemo } from "./bento";
-
 function LandingPage() {
   const [startAddress, setStartAddress] = useState("");
 
@@ -125,7 +122,64 @@ function LandingPage() {
               </div>
             </div>
           </div>
+          <div className="flex flex-row justify-center items-center rounded-md ml-2 h-64">
+            <div className="flex-column justify-center items-center mr-3 hmax mt-5 shadow-md bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md mb-5">  
+                <div>
+                  <p className="font-medium text-2xl text-white">Tata Tiago EV</p>
+                </div>
+                <div>
+                  <img src={carimage} height={225} width={225}/>
+                </div>
+                <div>
+                    <p className="font-medium text-white">Battery:300kw <br></br>Charging:60kw/h(max)</p>
+                </div>
+            </div>
+            <div className="flex-column ml-3">
+                  <div>
+                    Estimated Range: 250 km
+                  </div>
+                  <div>
+                    <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default range</label>
+                    <input id="default-range" type="range" value="50" className="w-1/2 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"></input>
+                  </div>
+                  <div>
+                  <div className="flex flex-row">
+                    <p>Selected the drive mode for today's journey</p>
+                          <div className="text-white bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md p-2 m-2">
+                            Economy
+                          </div>
+                          <div className="text-white bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md p-2 m-2">
+                            Cruise
+                          </div>
+                          <div className="text-white bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md p-2 m-2">
+                            Sports
+                          </div>
+                      </div>
+                  </div>
+                  <div>
+                      <p>Selection Regeneration Mode</p>
+                      <div className="flex">
+                          <div className="text-white bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md p-2 m-2">
+                            Regeneration 1
+                          </div>
+                          <div className="text-white bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md p-2 m-2">
+                            Regeneration 2
+                          </div>
+                          <div className="text-white bg-gradient-to-r from-blue-800 via-indigo-900 to-indigo-900 rounded-md p-2 m-2">
+                            Regeneration 3
+                          </div>
+                      </div>
+                  </div>
+                  <div>
+                    Total Calculated range is:
+                  </div>
+                  <div>
+                    Battery % left:
+                  </div>
+            </div>
+          </div>
           <div className="hmax wmax bg-gradient-to-r from-blue-500 to-purple-500 rounded-md border-2 m-2 mt-4">
+            <img src={demomap} id="demomap1"/>
             <div id="map-container" className="hmax wmax"></div>
           </div>
           <div className="wmax h-64 mt-6">
