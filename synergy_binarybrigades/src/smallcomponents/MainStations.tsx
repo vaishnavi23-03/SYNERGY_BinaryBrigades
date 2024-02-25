@@ -2,7 +2,7 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import { SiYourtraveldottv } from "react-icons/si";
 import { ThreeDCardDemo } from "@/components/Card";
-
+import { AnimatedPinDemo } from "./AnimatedPinDemo";
 function MainStations(){
     return(
         <>
@@ -64,7 +64,8 @@ function MainStations(){
             </div>
           </div>
           <div className="hmax wmax rounded-md m-2 mt-3">
-            <ThreeDCardDemo/>
+            <AnimatedPinDemo/>
+            
           </div>
           <div className="wmax h-64 mt-16">
           <Footer/>
