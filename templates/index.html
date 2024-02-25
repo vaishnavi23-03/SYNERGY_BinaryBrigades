@@ -55,9 +55,32 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data)
+                var startIcon = L.divIcon({
+    className: 'custom-div-icon',
+    html: '<i class="fas fa-map-pin fa-2x" style="color: blue;"></i>',
+    iconSize: [22, 22],
+    iconAnchor: [11, 22],
+    popupAnchor: [0, -11]
+});
+
+var endIcon = L.divIcon({
+    className: 'custom-div-icon',
+    html: '<i class="fas fa-map-pin fa-2x" style="color: red;"></i>',
+    iconSize: [22, 22],
+    iconAnchor: [11, 22],
+    popupAnchor: [0, -11]
+});
                 var coordinates = data.coordinates.map(coord => [coord[1], coord[0]]);
                 var polyline = L.polyline(coordinates, {color: 'black'}).addTo(map); // Shortest route
                 map.fitBounds(polyline.getBounds());
+                // Add marker at the start point
+var startMarker = L.marker([data.coordinates[0][1], data.coordinates[0][0]],{ icon: startIcon }).addTo(map);
+var endMarker = L.marker([data.endpoint[1], data.endpoint[0]],{ icon: endIcon }).addTo(map);
+
+
+// Fit the map bounds to include all markers and the route polyline
+
+
 
                 var evIcon = L.divIcon({
                     className: 'custom-div-icon',
@@ -70,10 +93,11 @@
                 var evRangeIcon = L.divIcon({
                     className: 'ev-range-icon',
                     html: '<i class="fas fa-bolt fa-2x"></i>',
-                    iconSize: [22, 22],
+                    iconSize: [32, 32],
                     iconAnchor: [11, 11],
                     popupAnchor: [0, -11]
                 });
+  
 
                 // Markers for EVs within range
                
@@ -84,19 +108,20 @@
    }
    else {
 
-                // Markers for all EVs
-                data.evCoordinates.forEach(evCoord => {
-                    if(evCoord[0]==data.rangeEvCoordinates[1] && evCoord[1]==data.rangeEvCoordinates[0]){
-                    var a=10}
-                    else{
-                        L.marker(evCoord, {icon: evIcon}).addTo(map);
-                    }
-                    
-                });
-                if (Array.isArray(data.rangeEvCoordinates)) {
+              
+                        // Add markers for EV stations
+        data.evStations.forEach(evStation => {
+            if(evStation.coordinates[0]==data.rangeEvCoordinates[1] && evStation.coordinates[1]==data.rangeEvCoordinates[0]){
+                  var a=10}
+                  else{
+            
+            var marker = L.marker(evStation.coordinates, {icon: evIcon}).addTo(map);
+            marker.bindPopup(evStation.name);}});
+               
        
-        L.marker(data.rangeEvCoordinates, { icon: evRangeIcon }).addTo(map);
-    }
+        var s =L.marker(data.rangeEvCoordinates, { icon: evRangeIcon }).addTo(map);
+        s.bindPopup('Fastcharge');
+
 }
             })
             .catch(error => console.error('Error fetching map:', error));

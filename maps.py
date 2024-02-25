@@ -53,6 +53,34 @@ def fetch_map():
 
     ev_coordinates = [list(reversed(poi['geometry']['coordinates'])) for poi in pois['features']]
 
+    # ev_stations = []
+    # for poi in pois['features']:
+    #     if(poi['properties']['name']==None):
+    #         names='ChargeFast'
+    #         ev_station = {
+    #             'name': names,
+    #             'coordinates': list(reversed(poi['geometry']['coordinates']))
+    #         }
+    #     else:
+    #          ev_station = {
+    #         'name': poi['properties']['name'],
+    #         'coordinates': list(reversed(poi['geometry']['coordinates']))
+    #     }
+    #     ev_stations.append(ev_station)
+    ev_stations = []
+    for poi in pois['features']:
+        if 'name' in poi['properties']:
+            name = poi['properties']['name']
+        else:
+            name = "FastCharge"
+    
+        ev_station = {
+            'name': name,
+            'coordinates': list(reversed(poi['geometry']['coordinates']))
+        }
+        ev_stations.append(ev_station)
+
+
     # Calculate remaining distance based on battery percentage
     total_distance = (directions['features'][0]['properties']['segments'][0]['distance'] )
     total_distance=total_distance # in m
@@ -83,10 +111,7 @@ def fetch_map():
     else:
         y=[0,0]
 
-
-
-
-    return jsonify({'coordinates': coordinates, 'evCoordinates': ev_coordinates, 'rangeEvCoordinates': [y[0],y[1]] })
+    return jsonify({'coordinates': coordinates, 'evCoordinates': ev_coordinates, 'rangeEvCoordinates': [y[0],y[1]] , 'evStations': ev_stations, 'endpoint':end_coords})
     
 if __name__ == '__main__':
     app.run(debug=True)
