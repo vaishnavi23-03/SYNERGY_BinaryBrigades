@@ -1,11 +1,11 @@
 import React from 'react';
-import signInImage from "@/assets/signInImage.png";
+import signInImage from "@/assets/signInImage.jpg";
 import { Link } from "react-router-dom";
 import "@/components/SignIn2.css"
 
 export default function SignIn2() {
     const backgroundStyle = {
-        backgroundImage: "url(${signInImage})",
+        backgroundImage: `url(${signInImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
