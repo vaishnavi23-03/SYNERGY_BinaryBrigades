@@ -14,3 +14,15 @@ hvh{
 h1000{
   height: 1000px;
 }
+.custom-div-icon {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  line-height: 1;
+}
+.custom-div-icon i {
+  color: 'black'; 
+}
+.ev-range-icon i {
+  color: #ffe600; 
+}

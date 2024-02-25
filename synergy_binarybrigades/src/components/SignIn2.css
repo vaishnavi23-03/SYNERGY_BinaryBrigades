@@ -1,0 +1,24 @@
+input{
+    width: 50%;
+}
+
+.formbox{
+    margin: 5vw;
+}
+
+.ptext{
+    font-size: 2.5vw;
+    font-style: bold;
+    margin-top: 15%;
+}
+.logincontainer{
+    overflow: hidden;
+}
+
+.signup{
+    font-style: italic;
+}
+
+.plogo{
+    font-weight: 600;
+}
